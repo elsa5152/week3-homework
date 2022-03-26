@@ -44,6 +44,32 @@ var upperCaseConfirm = confirm("Do you want your password to include uppercase l
         }
     }
 // we need a confirm to ask the user if they want to use numeric
+var numberConfirm = confirm("Do you want your password to include numbers");
+    if (numberConfirm === true) {
+        for (var i = 0; i < numberChar.length; i++) {
+            collectionOfValids.push(numberChar[i]);
+        }
+    }
+// we need a confirm to ask the user if they want to use special characters    
+var specialConfirm = confirm("Do you want your password to include special characters?");
+    if (specialConfirm === true) {
+        for (var i = 0; i < specialChar.length; i++) {
+            collectionOfValids.push(specialChar[i]);
+        }
+    }
+
+// using the number from above and the 4 booleans, create password
+var randomPassword = "";
+for (var i = 0; i < lengthConfirm; i++) {
+    collectionOfValids[
+        Math.floor(Math.random() * collectionOfValids.length)];
+    randomPassword +=
+       collectionOfValids[
+           Math.floor(Math.random() * collectionOfValids.length)
+       ];
+   }
+return randomPassword;
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
