@@ -11,13 +11,13 @@ function writePassword() {
 }
 
 function generatePassword () {
-  // prompt for the length of the password
+  // prompt for the length of the password//
   var passLength = prompt("Please enter how many characters you would like your password to be. \nMust be between 8 - 128 characters.");
   
   var lengthConfirm = parseInt(passLength);
   console.log(lengthConfirm);
 
-// choose a length of at least 8 characters and no more than 128 characters
+// length <8, >128//
   if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
       alert ("Error. Choice is not valid. Please try again.");
       return;
@@ -29,28 +29,28 @@ var lowerCaseChar = "abcdefghiklmnopqrsttuvwxtz" .split("");
 var numberChar = "0123456789" .split ("");
 var specialChar = "*&^%$#@!?><{}" .split("");
 
-// we need a confirm to ask the user if they want to use lowercase
+//   ask the user if they want to use lowercase or uppercase//
 var lowerCaseConfirm = confirm("Do you want your password to include lowercase letters?");
     if(lowerCaseConfirm === true) {
         for (var i = 0; i < lowerCaseChar.length; i++) {
             collectionOfValids.push(lowerCaseChar[i]);
         }
     }
-// we need a confirm to ask the user if they want to use uppercase
+
 var upperCaseConfirm = confirm("Do you want your password to include uppercase letters?");
     if (upperCaseConfirm === true) {
         for (var i = 0; i < upperCaseChar.length; i++) {
             collectionOfValids.push(upperCaseChar[i]);
         }
     }
-// we need a confirm to ask the user if they want to use numeric
+//  ask the user if they want to use numeric//
 var numberConfirm = confirm("Do you want your password to include numbers");
     if (numberConfirm === true) {
         for (var i = 0; i < numberChar.length; i++) {
             collectionOfValids.push(numberChar[i]);
         }
     }
-// we need a confirm to ask the user if they want to use special characters    
+//  ask the user if they want to use special characters //   
 var specialConfirm = confirm("Do you want your password to include special characters?");
     if (specialConfirm === true) {
         for (var i = 0; i < specialChar.length; i++) {
@@ -58,7 +58,7 @@ var specialConfirm = confirm("Do you want your password to include special chara
         }
     }
 
-// using the number from above and the 4 booleans, create password
+// using the number from above and the 4 booleans, create password//
 var randomPassword = "";
 for (var i = 0; i < lengthConfirm; i++) {
     collectionOfValids[
@@ -71,6 +71,6 @@ for (var i = 0; i < lengthConfirm; i++) {
 return randomPassword;
 }
 
-// Add event listener to generate button
+// Add event listener to generate button//
 generateBtn.addEventListener("click", writePassword);
 
